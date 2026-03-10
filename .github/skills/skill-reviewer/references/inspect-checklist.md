@@ -40,6 +40,8 @@ Use this checklist when reviewing a skill in Inspect Mode.
 - The skill does not ask the agent to perform hidden actions.
 - The real behavior does not exceed the advertised behavior.
 - The skill does not include malware, exploit code, or instructions that would compromise system safety.
+- The skill does not include persistence mechanisms, credential exfiltration steps, privilege escalation guidance, or covert data collection beyond the described task.
+- Security-sensitive actions are explicitly disclosed, narrowly scoped, and justified by the task rather than smuggled in as incidental steps.
 
 ### Explain Why, Not Only Must
 
@@ -55,6 +57,7 @@ Use this checklist when reviewing a skill in Inspect Mode.
 
 - Repetitive work can be automated.
 - Key decisions, rewrites, or risky actions are surfaced for human review.
+- Security-relevant or scope-expanding changes are never normalized as automatic background behavior.
 
 ## 5. Reporting Expectations
 
@@ -63,3 +66,4 @@ Use this checklist when reviewing a skill in Inspect Mode.
 - Distinguish hard risks from style improvements.
 - If suggesting refactors, explain which content should move into references/ and why.
 - When the remedy is clear, attach a patch draft or replacement snippet instead of stopping at abstract advice.
+- Escalate lack-of-surprise and security violations as blocking findings, not optional cleanup.
