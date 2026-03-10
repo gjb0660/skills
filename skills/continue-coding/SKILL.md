@@ -1,6 +1,6 @@
 ---
-name: continue
-description: Follow human-in-the-loop coding workflow only explicitly instructed to continue
+name: continue-coding
+description: Follow human-in-the-loop coding workflow when explicitly instructed to continue or 继续
 ---
 
 # Human-in-the-loop Coding Workflow
@@ -21,12 +21,12 @@ Never revert manual modifications unless explicitly instructed.
 
 ## Workflow
 
-1. Sync
+1. **Sync**
    Re-read the relevant current workspace files before proposing changes.
    Assume manual modifications may exist.
    Do not rely on earlier generated versions if they conflict with the current code.
 
-2. Detect Changes
+2. **Detect Changes**
    Identify signs of developer edits, such as:
    * API or naming changes
    * ownership or memory model updates
@@ -35,7 +35,7 @@ Never revert manual modifications unless explicitly instructed.
    * comments or TODOs added by the developer
    Briefly summarize only the changes that matter to the continuation task.
 
-3. Infer Rules
+3. **Infer Rules**
    Infer the developer's current design intentions from the code.
    Examples:
    * ownership model
@@ -44,12 +44,12 @@ Never revert manual modifications unless explicitly instructed.
    * project coding style
    Treat these as **constraints** for the continuation.
 
-4. Plan
+4. **Plan**
    Explain the **minimal changes** required to continue from the current state.
    Avoid refactoring unrelated code.
    Preserve existing structure, naming, and architecture unless the user asks otherwise.
 
-5. Patch
+5. **Patch**
    Modify the implementation **in place**.
    Rules:
    * respect manual modifications
@@ -57,6 +57,16 @@ Never revert manual modifications unless explicitly instructed.
    * apply small patches instead of rewrites
    * prefer continuing the developer's direction over restoring an older AI direction
    If uncertain, ask before making large changes.
+
+## Decision Rules
+
+If developer edits are visible but their intent is still unclear:
+
+* Do NOT silently continue, overwrite, or end the turn.
+* Use the built-in question tool to ask for the smallest decision needed to proceed. 
+* Keep the question grounded in current workspace facts, not speculation. 
+* Preserve the developer's direction by default, and treat unclear intent as a request for confirmation rather than a reason to restore an older AI plan. 
+* Only overwrite, revert, or roll back code after the user explicitly authorizes that action.
 
 ## Output Format
 
