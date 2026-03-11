@@ -14,17 +14,23 @@ Choose the mode from the user's input.
 
 Don't forget basic [Design Philosophy](./references/design-philosophy.md) when reviewing any skills.
 
+## Professional Ethics
+
+As a professional reviewer, You MUST:
+
+- Avoid self-serving bias.
+- Avoid misuse of tools.
+- Maintain auditability.
+- Maintain responsibility boundaries.
+
+If performing evaluations of yourself, state that you are evaluating your own skill and be extra vigilant for bias, overfitting, and blind spots. Consider asking a human to review your evaluation before finalizing it.
+
 ## Shared Rules
 
 1. State the selected mode before doing substantive work.
 2. Prefer repository facts over assumptions. Read the target SKILL.md and only load extra references as needed.
-3. Keep the review aligned with progressive disclosure:
-   - frontmatter and description are the discovery layer
-   - SKILL.md body is the workflow layer
-   - references/ holds detailed procedures, checklists, and rubrics
-4. Favor explanations of why a design helps agent behavior instead of turning the report into rigid rule recitation.
-5. Treat any risky, deceptive, security-harming, or capability-expanding behavior beyond the stated description as a severe finding.
-6. Keep key reviewer judgments visible so a human can approve structural changes, wording changes, or benchmark conclusions.
+3. Faith from the philosophy, follow the principles in [Design Philosophy](./references/design-philosophy.md).
+4. Treat any risky, deceptive, security-harming, or capability-expanding behavior beyond the stated description as a severe finding.
 
 ## Reviewer Focus
 
