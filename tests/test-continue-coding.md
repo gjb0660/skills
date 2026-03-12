@@ -1,7 +1,7 @@
 # Continue Skill Test Case
 
-- skill: `continue`
-- tmpdir: `tests/test-continue/`
+- skill: `continue-coding`
+- tmpdir: `.tmp/continue-coding/test`
 
 ## Scenario
 

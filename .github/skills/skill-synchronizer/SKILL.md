@@ -17,7 +17,7 @@ Synchronize maintained third-party skills from official upstream sources into th
 - Use the upstream source listed in the maintained skills table for that skill.
 - Treat this as a workspace-scoped skill operation for the current repository.
 - Install or update the skill in its default target path unless the user explicitly asks for a different target path.
-- Use a temporary workspace directory only (e.g., `.tmp/`) for download, extraction, or cache files, and remove it before finishing.
+- Use a temporary workspace directory `.tmp/<skill-name>/sync` only for download, extraction, or cache files, and remove it before finishing.
 - Preserve unrelated skills, prompts, tests, and user changes outside the target skill directory.
 
 ## Execution workflow

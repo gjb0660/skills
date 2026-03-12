@@ -1,7 +1,6 @@
 ---
 name: skill-reviewer
 description: "Review a skill as a specialist reviewer. Use this skill when you need a comprehensive skill health check, description strategy review, progressive-loading audit, or a visible with-skill vs without-skill evaluation. Use it because skill quality depends on reviewer-grade diagnosis, evidence, and human approval for key changes."
-argument-hint: "Provide a skill name for Inspect Mode, or an evaluation request for Evaluation Mode"
 ---
 
 # Skill Reviewer

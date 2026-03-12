@@ -1,6 +1,6 @@
 ---
 name: skill-tester
-description: Run visible, auditable skill tests and manage skill test cases under tests/test-*.md and tests/test-*/.
+description: Run visible, auditable skill tests and manage skill test cases under tests/test-*.md.
 ---
 
 # Skill Tester
@@ -13,7 +13,7 @@ This skill is generic. Keep the skill body limited to repository-wide testing ru
 
 - Skill definitions live in `skills/<skill-name>/SKILL.md`.
 - Skill-specific test cases live in `tests/test-<skill-name>.md`.
-- Temporary artifacts for a test live in `tests/test-<skill-name>/`.
+- Temporary artifacts for a test live in `.tmp/<skill-name>/test/`.
 
 ## Responsibilities
 
@@ -23,11 +23,6 @@ This skill has two responsibilities:
 2. Create, review, update, list, or remove skill test cases when the user asks for case maintenance.
 
 In both modes, the current workspace is the source of truth. Never rely on stale context when files may have changed.
-
-## When To Use
-
-- Use this skill when the user wants to test a skill, review a skill test, add a new test case, update an existing test case, inspect available test cases, or delete an obsolete test case.
-- Do not use this skill for normal feature work unrelated to skill definitions or skill-test assets.
 
 ## Discovery Rules
 
@@ -57,7 +52,7 @@ Do not invoke the tested skill silently.
 ### 3. Execute The Case
 
 - Follow the test case exactly.
-- Keep all temporary test artifacts inside `tests/test-<skill-name>/` unless the case explicitly requires something else.
+- Keep all temporary test artifacts inside `.tmp/<skill-name>/test/` unless the case explicitly requires something else.
 - If existing files were manually edited, continue from the current state with the smallest necessary patch.
 - Do not rewrite a user-modified file when a local patch is sufficient.
 
@@ -124,7 +119,7 @@ Keep the final case focused on the target skill by replacing the template guidan
 
 - Skill: `<skill-name>`
 - Case: `tests/test-<skill-name>.md`
-- TmpDir: `tests/test-<skill-name>/`
+- TmpDir: `.tmp/<skill-name>/test/`
 
 ### Execution
 
@@ -142,7 +137,5 @@ Keep the final case focused on the target skill by replacing the template guidan
 ## Quality Bar
 
 - Sync before acting.
-- Respect manual changes and never roll them back without instruction.
-- Keep edits minimal and verification direct.
 - Keep the process visible, auditable, and reproducible.
 - Do not fabricate files, outputs, or verification evidence.

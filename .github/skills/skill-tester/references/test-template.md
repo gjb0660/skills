@@ -3,7 +3,7 @@
 Use this structure when creating or heavily rewriting a skill test case.
 
 - skill: `<skill-name>`
-- tmpdir: `tests/test-<skill-name>/`
+- tmpdir: `.tmp/<skill-name>/test/`
 
 ## Scenario
 
